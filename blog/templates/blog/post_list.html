@@ -10,7 +10,14 @@
             <p>Welcome to DjangoBlog by KnapCorp</p>
         </div>
         <div class="posts">
+            {% comment %}
             {{ posts }}
+            {% endcomment %}
+            {% for post in posts %}
+            <h2><a href="">{{ post.title }}</a></h2>
+            <em>{{ post.text|linebreaksbr }}</em>
+            <p>published: {{post.publish_date }}</p>
+            {% endfor %}
         </div>
     </div>
 
